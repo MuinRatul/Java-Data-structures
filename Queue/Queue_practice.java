@@ -1,3 +1,7 @@
+/**
+ * The provided Java class implements a generic Queue data structure with enqueue, dequeue, peek, and
+ * printQueue operations for both Integer and String types.
+ */
 
 package ds_practice.java;
 
@@ -17,8 +21,8 @@ class Queue<T>
     public boolean isEmpty()
     {
         return head==null && tail==null;
-    }
-    
+    } 
+   // These methods are implementing the basic operations of a queue data structure:
     public void enQueue(T data)
     {
         Node newNode= new Node(data);
@@ -72,13 +76,10 @@ public class Queue_practice {
         }
         System.out.println("");
         while(!temp.isEmpty())
-        {
             q.enQueue(temp.deQueue());
-        }  
     }
-
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) 
+    {
         System.out.println("Integer Queue");
        
         Queue<Integer> q1 = new Queue<>();
@@ -113,5 +114,4 @@ public class Queue_practice {
         q2.deQueue();
         printQueue(q2);
     }
-    
 }
