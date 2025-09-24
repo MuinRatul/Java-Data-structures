@@ -1,3 +1,8 @@
+/**
+ * The BinaryTree class in Java defines methods for building, traversing, and calculating properties of
+ * a binary tree, including pre-order, in-order, post-order, and level-order traversal, as well as
+ * counting nodes, summing node values, and determining tree height.
+ */
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -31,6 +36,7 @@ public class BinaryTree {
             return newNode;
         }
     }
+// The code snippet provided defines several methods for traversing a binary tree:
     public static void preOrder(Node root)
     {
         if(root==null)
@@ -55,7 +61,6 @@ public class BinaryTree {
         postOrder(root.right);
         System.out.print(root.data+" ");
     }
-    
     //BFS
     public static void levelOrder(Node root)
     {
@@ -82,6 +87,37 @@ public class BinaryTree {
             }
         }
     }
+    //TC= O(n)
+// The provided code snippet contains three methods for calculating properties of a binary tree:
+    public static int countNumNodes(Node root)
+    {
+        if(root==null)
+            return 0;
+        int leftnodes = countNumNodes(root.left);
+        int rightnodes =  countNumNodes(root.right);
+
+        return leftnodes+rightnodes+1;
+    }
+    //TC= O(n)
+    public static int sumOfNodes(Node root)
+    {
+         if(root==null)
+            return 0;
+        int leftsum = sumOfNodes(root.left);
+        int rightsum = sumOfNodes(root.right);
+
+        return leftsum+rightsum+root.data;
+    }
+    //TC= O(n)
+    public static int treeHight(Node root)
+    {
+        if(root==null)
+            return 0;
+        int leftHeight = treeHight(root.left);
+        int rightHeight = treeHight(root.right);
+
+        return Math.max(leftHeight, leftHeight) +1;
+    }
     public static void main(String[] args) 
     {
         
@@ -89,10 +125,13 @@ public class BinaryTree {
         
         Binarytree tree = new Binarytree();
         Node root= tree.builtTree(nodes);
-       
-        System.out.println(root.data);
         
-        System.out.print("Pre-Order: ");
+        System.out.print("Number of Nodes: "+countNumNodes(root));
+        System.out.print("\nSum of Node data: "+sumOfNodes(root));
+        System.err.print("\nTree height: "+treeHight(root));
+        System.out.print("\nRoot data: "+root.data);
+        
+        System.out.print("\nPre-Order: ");
         preOrder(root);
         
         System.out.print("\nIn-Order: ");
@@ -103,7 +142,7 @@ public class BinaryTree {
        
         System.out.println("\nLevel-Order: ");
         levelOrder(root);
-     
+
     }
     
 }
