@@ -10,11 +10,12 @@ Each topic is organized into its own folder:
 - **LinkedList** – Implementation of singly linked lists
 - **Stack** – Stack implementation using linked lists
 - **Queue** – Queue implementation 
+- **Binary Tree** – Binary tree implementation
 
 Future additions will include:
 - Doubly, and circular linked lists
 - Circular queue, and priority queue
-- Trees (Binary Tree, BST, Heap)
+- Trees (BST, Heap)
 - Hashing
 - Other advanced data structures
 
@@ -28,7 +29,22 @@ This repository is primarily for educational purposes. You are welcome to clone 
 
 ## 🚀 How to Run
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/MuinRatul/Java-Data-structures.git
+### Prerequisites
+- Install **Java JDK 8+**  
+- Any IDE that supports Java (IntelliJ, Eclipse, VS Code) or just the terminal  
+
+### Steps 
+1. Clone this Repository:
+    ```bash
+    git clone https://github.com/MuinRatul/Java-Data-structures.git
+    cd Java-Data-structures
+    cd LinkedList
+
+2. Compile the source files:
+    ```bash
+    javac LinkedList.java
+
+3. Run:
+    ```bash
+    java LinkedList
 
